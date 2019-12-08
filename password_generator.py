@@ -3,6 +3,7 @@
 
 import random
 import string
+import sys
 
 letters = string.ascii_letters
 numbers = ''.join(map(str, range(0, 10)))
@@ -30,6 +31,9 @@ def get_length(input_text):
 number_of_letters = get_length("letters")
 number_of_numbers = get_length("numbers")
 number_of_special_characters = get_length("special characters")
+
+if (number_of_letters + number_of_numbers + number_of_special_characters) < 6:
+    sys.exit("Password should be greater than 6 characters, sorry!")
 
 pass_list = []
 dictionary = {letters: number_of_letters, numbers: number_of_numbers,
